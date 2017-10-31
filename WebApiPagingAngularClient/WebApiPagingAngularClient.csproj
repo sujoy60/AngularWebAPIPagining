@@ -21,6 +21,7 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -110,13 +111,13 @@
     <Content Include="app\app.js" />
     <Content Include="app\clubClientSvc.js" />
     <Content Include="app\full\full.html" />
-    <Content Include="app\full\fullClubSvc.js" />
+    <Content Include="app\full\fullFeedbackSvc.js" />
     <Content Include="app\full\fullCtrl.js" />
     <Content Include="app\full\pager.html" />
     <Content Include="app\full\pager.js" />
     <Content Include="app\nav.html" />
     <Content Include="app\simple\simple.html" />
-    <Content Include="app\simple\simpleClubSvc.js" />
+    <Content Include="app\simple\simpleFeedbackSvc.js" />
     <Content Include="app\simple\simpleCtrl.js" />
     <Content Include="app\welcome.html" />
     <Content Include="app\welcomeCtrl.js" />
@@ -155,13 +156,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\ClubsController.cs" />
+    <Compile Include="Controllers\FeedbacksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ClubRepository.cs" />
-    <Compile Include="Models\ClubsModels.cs" />
+    <Compile Include="Models\FeedbackRepository.cs" />
+    <Compile Include="Models\FeedbacksModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\QueryHelper.cs" />
   </ItemGroup>

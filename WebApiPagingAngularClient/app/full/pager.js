@@ -5,9 +5,9 @@
         .module('app')
         .directive('pager', pager);
 
-    pager.$inject = ['$window','fullClubSvc'];
+    pager.$inject = ['$window','fullFeedbackSvc'];
     
-    function pager($window, fullClubSvc) {
+    function pager($window, fullFeedbackSvc) { 
         var directive = {
             link: link,
             restrict: 'E',

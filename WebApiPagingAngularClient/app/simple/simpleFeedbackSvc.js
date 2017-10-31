@@ -3,11 +3,11 @@
 
     angular
         .module('app')
-        .factory('simpleClubSvc', simpleClubSvc);
+        .factory('simpleFeedbackSvc', simpleFeedbackSvc);
 
-    simpleClubSvc.$inject = ['$q', 'clubClientSvc'];
+    simpleFeedbackSvc.$inject = ['$q', 'clubClientSvc'];
 
-    function simpleClubSvc($q, clubClientSvc) {
+    function simpleFeedbackSvc($q, clubClientSvc) {
         var initialOptions ={
             size: 4,            
             orderBy: "user"
@@ -22,12 +22,8 @@
                     totalPages: 1,
                     currentPage: 0,
                     sortableProperties: [
-                    //"name",
-                    //    "city"
-                    //,"street"
                         "user",
                         "score"
-                        //,"verbatim"
                     ]
                 }
             }

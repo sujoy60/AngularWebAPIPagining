@@ -7,10 +7,7 @@ namespace WebApiPagingAngularClient.Models
 {
     public class Club
     {
-        //public int Id { get; set; }
-        //public string Name { get; set; }
-        //public string City { get; set; }
-        //public string Street{get;set;}
+
         public int id { get; set; }
         public string user { get; set; }
         public int score { get; set; }

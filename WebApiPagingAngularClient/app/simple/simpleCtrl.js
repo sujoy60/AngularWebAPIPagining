@@ -5,19 +5,19 @@
         .module('app')
         .controller('simpleCtrl', simpleCtrl);
 
-    simpleCtrl.$inject = ['$scope', 'simpleClubSvc'];
+    simpleCtrl.$inject = ['$scope', 'simpleFeedbackSvc'];
 
-    function simpleCtrl($scope, simpleClubSvc) {
+    function simpleCtrl($scope, simpleFeedbackSvc) {
         $scope.title = 'simple paging';
-        $scope.description = 'Using paging to populate a single list of clubs.';
+        $scope.description = '';
 
-        $scope.clubs = simpleClubSvc.clubs;
+        $scope.clubs = simpleFeedbackSvc.clubs;
         $scope.loadClubs = loadClubs;
 
-        $scope.clear = simpleClubSvc.clear;
+        $scope.clear = simpleFeedbackSvc.clear;
         
-        $scope.options = simpleClubSvc.paging.options;
-        $scope.info = simpleClubSvc.paging.info;
+        $scope.options = simpleFeedbackSvc.paging.options;
+        $scope.info = simpleFeedbackSvc.paging.info;
 
         $scope.status = {
             type: "info",
@@ -28,13 +28,15 @@
         activate();
 
         $scope.displayVerbatim = function (c) {
-            return c.verbatim;
+
+            $scope.description = c.verbatim;
+
         };
 
         function activate() {
             //if this is the first activation of the controller load the first page
-            if (simpleClubSvc.paging.info.currentPage === 0) {
-                simpleClubSvc.load();
+            if (simpleFeedbackSvc.paging.info.currentPage === 0) {
+                simpleFeedbackSvc.load();
             }
         }
         //function displayVerbatim() { alert("reached Sim"); }
@@ -42,7 +44,7 @@
             $scope.status.busy = true;
             $scope.status.message = "loading records";
 
-            simpleClubSvc.load()
+            simpleFeedbackSvc.load()
                             .then(function (result) {
                                 $scope.status.message = "ready";
                             }, function (result) {
@@ -54,7 +56,7 @@
         }
 
         function optionsChanged() {
-            simpleClubSvc.clear();            
+            simpleFeedbackSvc.clear();            
         }
     }
 })();

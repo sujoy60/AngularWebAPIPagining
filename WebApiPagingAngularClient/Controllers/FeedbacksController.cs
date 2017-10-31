@@ -10,18 +10,18 @@ using WebApiPagingAngularClient.Utility;
 namespace WebApiPagingAngularClient.Controllers
 {
     [RoutePrefix("api/clubs")]
-    public class ClubsController : ApiController
+    public class FeedbacksController : ApiController
     {
-        private ClubRepository clubRepository;
+        private FeedbackRepository feedbackRepository;
 
-        public ClubsController(): this(new ClubRepository())
+        public FeedbacksController(): this(new FeedbackRepository())
         {
 
         }
 
-        public ClubsController(ClubRepository repository)
+        public FeedbacksController(FeedbackRepository repository)
         {
-            this.clubRepository = repository;
+            this.feedbackRepository = repository;
         }
 
         // GET: api/Clubs
@@ -29,7 +29,7 @@ namespace WebApiPagingAngularClient.Controllers
         public IHttpActionResult Get()
         {
             
-            var clubs = this.clubRepository.Clubs.ToList();
+            var clubs = this.feedbackRepository.Clubs.ToList();
 
             return Ok(clubs);
         }
@@ -38,17 +38,15 @@ namespace WebApiPagingAngularClient.Controllers
         [Route("{id:int}")]
         public IHttpActionResult Get(int id)
         {
-            //var club = this.clubRepository.Clubs.FirstOrDefault(c => c.Id == id);
-            var club = this.clubRepository.Clubs.FirstOrDefault(c => c.id == id);
+            var club = this.feedbackRepository.Clubs.FirstOrDefault(c => c.id == id);
             return Ok(club);
         }
 
         // GET: api/Clubs/clubName
         [Route("{name:alpha}")]
-        public IHttpActionResult Get(string user) //name)
+        public IHttpActionResult Get(string user) 
         {
-            //var club = this.clubRepository.Clubs.FirstOrDefault(c => c.Name == name);
-            var club = this.clubRepository.Clubs.FirstOrDefault(c => c.user == user);
+            var club = this.feedbackRepository.Clubs.FirstOrDefault(c => c.user == user);
             return Ok(club);
         }
 
@@ -57,9 +55,9 @@ namespace WebApiPagingAngularClient.Controllers
         [Route("{pageSize:int}/{pageNumber:int}/{orderBy:alpha?}")]
         public IHttpActionResult Get(int pageSize, int pageNumber, string orderBy = "")
         {
-            var totalCount = this.clubRepository.Clubs.Count();
+            var totalCount = this.feedbackRepository.Clubs.Count();
             var totalPages = Math.Ceiling((double)totalCount / pageSize);
-            var clubQuery = this.clubRepository.Clubs;
+            var clubQuery = this.feedbackRepository.Clubs;
 
             if (QueryHelper.PropertyExists<Club>(orderBy))
             {
@@ -67,7 +65,6 @@ namespace WebApiPagingAngularClient.Controllers
                 clubQuery = clubQuery.OrderBy(orderByExpression);
             } else
             {
-                //clubQuery = clubQuery.OrderBy(c => c.Id);
                 clubQuery = clubQuery.OrderBy(c => c.id);
             }
 

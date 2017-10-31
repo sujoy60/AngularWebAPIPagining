@@ -9,11 +9,11 @@ using Newtonsoft.Json;
 
 namespace WebApiPagingAngularClient.Models
 {
-    public class ClubRepository
+    public class FeedbackRepository
     {
         private List<Club> clubs = new List<Club>();
         
-        public List<Club> getData()//dynamic fetchData()//: this(new ClubRepository())
+        public List<Club> getData()
         {
             var webClient = new WebClient();
             var json = webClient.DownloadString(@"https://resonatetest.azurewebsites.net/data");

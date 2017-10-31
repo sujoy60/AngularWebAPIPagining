@@ -21,9 +21,9 @@ namespace WebApiPagingAngularClient
                     "~/app/welcomeCtrl.js",
                     "~/app/full/pager.js",
                     "~/app/full/fullCtrl.js",
-                    "~/app/full/fullClubSvc.js",
+                    "~/app/full/fullFeedbackSvc.js",
                     "~/app/simple/simpleCtrl.js",
-                    "~/app/simple/simpleClubSvc.js"));
+                    "~/app/simple/simpleFeedbackSvc.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.

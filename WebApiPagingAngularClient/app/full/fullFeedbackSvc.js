@@ -3,13 +3,13 @@
 
     angular
         .module('app')
-        .factory('fullClubSvc', fullClubSvc);
+        .factory('fullFeedbackSvc', fullFeedbackSvc);
 
-    fullClubSvc.$inject = ['$q', 'clubClientSvc'];
+    fullFeedbackSvc.$inject = ['$q', 'clubClientSvc'];
 
-    function fullClubSvc($q, clubClientSvc) {
+    function fullFeedbackSvc($q, clubClientSvc) {
         var initialOptions = {
-            size: 4,
+            size: 4, 
             //orderBy: "name"
             orderBy: "user"
         },
