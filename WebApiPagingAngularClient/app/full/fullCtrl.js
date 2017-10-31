@@ -18,13 +18,17 @@
         $scope.navigate = navigate;        
         $scope.clear = optionsChanged;
 
+        $scope.fetchedverbatim = 'Verbatim fetcehd';
+
         $scope.status = {
             type: "info",
             message: "ready",
             busy: false
         };
         $scope.displayVerbatim = function (c) {
-            alert("inside Full " +c);
+            alert("full ctr  " + c.verbatim);
+            $scope.description = c.verbatim;
+            //return c.verbatim;
         };
 
         activate();

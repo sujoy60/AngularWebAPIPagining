@@ -5,11 +5,12 @@
                 <div class="panel-heading">EPL Clubs</div>
                 <div class="panel-body">
                     <ul class="list-unstyled clubList">
-                        <li  ng-click="displayVerbatim(c.id)" ng-repeat="c in clubs">{{c.user}}{{c.score}} </li>
+                        <li  ng-click="displayVerbatim(c)" ng-repeat="c in clubs">{{c.user}}{{c.score}} </li>
                     </ul>
                     <div class="btn-group-sm">
                         <button class="btn btn-sm btn-primary" ng-disabled="status.busy || !info.moreAvailable()" ng-click="loadClubs()">more</button>
                         <button class="btn btn-sm btn-warning" ng-disabled="status.busy" ng-click="clear()">clear</button>
+                        <p>"All good"</p>
                     </div>
                 </div>
             </div>
@@ -17,6 +18,7 @@
         <div class="col-md-5">
             <div class="well well-sm" role="alert">
                 <p>{{description}}</p>
+                
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">paging options</div>

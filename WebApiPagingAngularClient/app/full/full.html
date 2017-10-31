@@ -5,7 +5,7 @@
                 <div class="panel-heading">EPL Clubs</div>
                 <div class="panel-body">
                     <ul class="list-unstyled clubList">
-                        <li ng-click="displayVerbatim(c.id)"  ng-repeat="c in pages[info.currentPage].clubs">{{c.user}}{{c.score}} </li>
+                        <li ng-click="displayVerbatim(c)"  ng-repeat="c in pages[info.currentPage].clubs">{{c.user}}{{c.score}} </li>
                     </ul>                    
                     <pager total-pages="info.totalPages" current-page="info.currentPage" page-action="navigate(pageNumber)"></pager>
                 </div>
@@ -14,6 +14,7 @@
         <div class="col-md-5">
             <div class="well well-sm" role="alert">
                 <p>{{description}}</p>
+                <p>{{fetchedverbatim}}</p>
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">paging options</div>

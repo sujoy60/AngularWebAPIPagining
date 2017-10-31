@@ -52,6 +52,7 @@ namespace WebApiPagingAngularClient.Controllers
             return Ok(club);
         }
 
+
         // GET: api/Clubs/pageSize/pageNumber/orderBy(optional)
         [Route("{pageSize:int}/{pageNumber:int}/{orderBy:alpha?}")]
         public IHttpActionResult Get(int pageSize, int pageNumber, string orderBy = "")

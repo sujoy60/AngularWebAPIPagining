@@ -26,9 +26,11 @@
         };        
         
         activate();
+
         $scope.displayVerbatim = function (c) {
-            alert("inside Sim " + c);
+            return c.verbatim;
         };
+
         function activate() {
             //if this is the first activation of the controller load the first page
             if (simpleClubSvc.paging.info.currentPage === 0) {
